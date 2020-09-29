@@ -18,5 +18,5 @@ setInterval(broadcast, 1000);
 function broadcast() {
   var message = Buffer.from(new Date().toLocaleTimeString());
   sender.send(message, 0, message.length, MULTICAST_PORT, MULTICAST_ADDR);
-  console.log("Sender [" + id + "] sent \"" + message + "\" to the wire...");
+  console.log("Sender [" + id + '] sent "' + message + '" to the wire...');
 }
