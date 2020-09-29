@@ -2,12 +2,10 @@ const MULTICAST_PORT = process.env.APP_MULTICAST_PORT;
 const MULTICAST_ADDR = process.env.APP_MULTICAST_ADDR;
 
 const id = process.argv[2] || 0;
-const HOST_ADDR = process.env.APP_HOST_ADDR; //this is the sender's own IP
-const HOST_PORT = process.env.APP_HOST_PORT; //this is the sender's own port
 const dgram = require("dgram");
 const sender = dgram.createSocket("udp4");
 
-sender.bind(HOST_PORT, function () {
+sender.bind(function () {
   sender.setBroadcast(true);
   sender.setMulticastTTL(128);
   sender.addMembership(MULTICAST_ADDR);
