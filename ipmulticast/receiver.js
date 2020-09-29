@@ -12,7 +12,7 @@ receiver.on("listening", function () {
 });
 
 receiver.on("message", function (message, remote) {
-  console.log("Msg from: ", remote.address, ":", remote.port, " - ", message);
+  console.log("Msg from: ", remote.address, ":", remote.port, " - ", message.toString());
 });
 
 receiver.bind(MULTICAST_PORT);
